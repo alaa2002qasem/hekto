@@ -1,4 +1,4 @@
-*{
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;}
@@ -10,7 +10,6 @@
     padding: 15px 0;
      width: 50%;
     margin: 0 auto;
-    padding: 15px 0
     
 }
 
@@ -45,6 +44,20 @@ a{
    background-color: rgb(132, 132, 136);
    transform: scale(1.05);
 }
+
+
+
 body{
-    margin-top: 20px;
+   padding: 80px;
+
+
+.shop_form {
+    background-image: url(Group\ 162.jpg);
+    background-position: bottom center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+      height: 462px;
+      top: 6023px;
+     text-align: center;
+  }
 }
