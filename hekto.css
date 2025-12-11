@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;}
+    
 
 .header .container{
     display: flex;
@@ -134,4 +135,98 @@ body{
 }  
   /*end footer*/
 
+ 
 
+
+
+
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 20px;
+  }
+
+  /* الهيدر */
+  .header .container {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .header ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  /* فورم البحث */
+  .searsh-form form {
+    width: 100%;
+    display: flex;
+  }
+
+  .searsh-form input {
+    width: 100%;
+  }
+
+  /* المنتجات */
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%;
+  }
+
+  /* الفوتر */
+  .row {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer_col {
+    width: 100%;
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* الهيدر */
+  .header .container {
+    width: 90%;
+  }
+
+  .header ul {
+    gap: 20px;
+  }
+
+  /* المنتجات */
+  .products-container {
+    gap: 20px;
+  }
+
+  .product {
+    width: 45%;
+  }
+
+  /* الفوتر */
+  .row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+@media (max-width: 1024px) {
+
+  .header .container {
+    width: 80%;
+  }
+
+  .product {
+    width: 220px;
+  }
+
+}
