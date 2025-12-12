@@ -190,43 +190,89 @@ body{
   .footer_col {
     width: 100%;
   }
+}
+
+
+
+
+/*media queries*/
+/* ================= */
+/* الكود الأساسي لكل الموقع */
+/* ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 80px; /* مسافة من فوق بسبب الهيدر الثابت */
+    font-family: sans-serif;
+}
+
+/* ====== الهيدر ====== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(226, 226, 233);
+    position: fixed; /* يثبت في الأعلى */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* فوق كل العناصر */
+    padding: 15px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.header ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+}
+
+.header a:hover {
+    background-color: rgb(132, 132, 136);
+    transform: scale(1.05);
+}
+
+/* ===== فورم البحث ===== */
+.searsh-form form {
+    display: flex;
+}
+
+.searsh-form input {
+    padding: 5px 10px;
+}
+
+/* ===== shop_form ===== */
+.shop_form {
+    background-image: url("Group 162.jpg");
+    background-position: bottom center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 462px;
+    text-align: center;
+}
+
+/* ===== الفوتر ===== */
+.footer {
+    background:  #EEEFFB;
 
 }
-@media (max-width: 768px) {
 
-  /* الهيدر */
-  .header .container {
-    width: 90%;
-  }
+/* end media queries*/
 
-  .header ul {
-    gap: 20px;
-  }
-
-  /* المنتجات */
-  .products-container {
-    gap: 20px;
-  }
-
-  .product {
-    width: 45%;
-  }
-
-  /* الفوتر */
-  .row {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-}
-@media (max-width: 1024px) {
-
-  .header .container {
-    width: 80%;
-  }
-
-  .product {
-    width: 220px;
-  }
-
-}
