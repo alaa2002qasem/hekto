@@ -1,89 +1,71 @@
- *{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;}
-    
+    box-sizing: border-box;
+}
 
-.header .container{
+/*____________ HEADER____________ */
+.header {
+    display: flex;
+    background-color: rgb(226, 226, 233);
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
-     width: 50%;
+    width: 90%;
     margin: 0 auto;
-    
 }
 
+.header ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
 
-a{
+.header a:hover {
+    background-color: rgb(132, 132, 136);
+    transform: scale(1.05);
+}
+
+a {
     text-decoration: none;
 }
 
-.header{
-    display: flex;
-   background-color: rgb(226, 226, 233);
-   justify-content: space-between;
-  
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   z-index: 999;
-   
-}
-.header ul{
-    display: flex;
-    gap: 30px;
-    padding: 15px 0;
-   list-style-type: none;
-   
-
-}
-  
-
-.header a:hover{
-   background-color: rgb(132, 132, 136);
-   transform: scale(1.05);
-}
-
-
-
-body{
-   padding: 80px; }
-
-
+/*____________ SHOP FORM IMAGE ___________*/
 .shop_form {
-    background-image: url(Group\ 162.jpg);
+    background-image: url('Group 162.jpg');
     background-position: bottom center;
     background-size: 100%;
     background-repeat: no-repeat;
-      height: 462px;
-      top: 6023px;
-     text-align: center;
-  }
-   .row {
+    height: 462px;
+    text-align: center;
+}
+
+/*_____________ FOOTER ______________*/
+.footer {
+    background: #c9cad3;
+    padding: 60px 0;
+    color: #3d3d3d;
+    font-family: sans-serif;
+     margin-top: 50px;
+}
+
+.row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 40px;
 }
-     
- 
-  /*start footer*/
-  .footer {
-    background: #f8f7fc;
-    padding: 60px 0;
-    color: #3d3d3d;
-    font-family: sans-serif;
-}
-
-.container {
-    width: 90%;
-    margin: auto;
-}
-
-
 
 .footer_col {
     flex: 1 1 200px;
@@ -132,147 +114,379 @@ body{
     margin-top: 20px;
     color: #6a6a6a;
     max-width: 250px;
-}  
-  /*end footer*/
+}
 
- 
-
-
-
-
-
-@media (max-width: 480px) {
-
-  body {
-    padding: 20px;
-  }
-
-  /* الهيدر */
-  .header .container {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  .header ul {
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 14px;
-  }
-
-  /* فورم البحث */
-  .searsh-form form {
-    width: 100%;
-    display: flex;
-  }
-
-  .searsh-form input {
-    width: 100%;
-  }
-
-  /* المنتجات */
-  .products-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product {
-    width: 90%;
-  }
-
-  /* الفوتر */
-  .row {
-    flex-direction: column;
+/* ____________ Products ____________ */
+.featured-products h2 {
     text-align: center;
+    font-size: 32px;
+    color: #1c1360;
+    margin-bottom: 40px;
+}
+
+.products-container {
+    display: flex;
     gap: 25px;
-  }
-
-  .footer_col {
-    width: 100%;
-  }
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-
-
-
-/*media queries*/
-/* ================= */
-/* الكود الأساسي لكل الموقع */
-/* ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    padding: 80px; /* مسافة من فوق بسبب الهيدر الثابت */
-    font-family: sans-serif;
-}
-
-/* ====== الهيدر ====== */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(226, 226, 233);
-    position: fixed; /* يثبت في الأعلى */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999; /* فوق كل العناصر */
-    padding: 15px 0;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    margin: 0 auto;
-}
-
-.header ul {
-    display: flex;
-    gap: 30px;
-    list-style-type: none;
-}
-
-.header a {
-    text-decoration: none;
-    color: black;
-    padding: 5px 10px;
-}
-
-.header a:hover {
-    background-color: rgb(132, 132, 136);
-    transform: scale(1.05);
-}
-
-/* ===== فورم البحث ===== */
-.searsh-form form {
-    display: flex;
-}
-
-.searsh-form input {
-    padding: 5px 10px;
-}
-
-/* ===== shop_form ===== */
-.shop_form {
-    background-image: url("Group 162.jpg");
-    background-position: bottom center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 462px;
+.product-card {
+    width: 220px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     text-align: center;
 }
 
-/* ===== الفوتر ===== */
-.footer {
-    background:  #EEEFFB;
-
+.product-img img {
+    width: 100%;
 }
 
-/* end media queries*/
+.product-title {
+    color: #cc007a;
+    margin-top: 15px;
+    font-size: 18px;
+}
 
+.product-colors {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.color-dot {
+    width: 35px;
+    height: 6px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.color-one { background: #ff2e86; }
+.color-two { background: #6bdcff; }
+.color-three { background: #3d00ff; }
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    margin-top: 15px;
+    color: #333;
+    font-size: 14px;
+}
+/* ____________ end Products ____________ */
+
+@media screen and (max-width: 480px) {
+
+    /* الهيدر */
+    .header .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 10px 0;
+    }
+
+    .header ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* الفورم البحث */
+    .searsh-form form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* المنتجات */
+    .products-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90%;
+    }
+
+    /* shop_form */
+    .shop_form {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 30px;
+    }
+
+    /* الفوتر */
+    .footer {
+        text-align: center;
+    }
+
+    .footer_col {
+        flex: 1 1 100%;
+        margin-bottom: 30px;
+    }
+
+    .email_form {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .email_form input {
+        width: 90%;
+        border-right: 1px solid #ddd;
+    }
+
+    .email_form button {
+        width: 90%;
+    }
+}
+
+
+/*-------------------------*/
+/* شاشات التابلت (من 481px إلى 768px) */
+/*-------------------------*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    /* الهيدر */
+    .header .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 15px 0;
+    }
+
+    .header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* المنتجات */
+    .products-container {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .product-card {
+        width: 45%;
+    }
+
+    /* shop_form */
+    .shop_form {
+        height: 350px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 40px;
+    }
+
+    /* الفوتر */
+    .footer_col {
+        flex: 1 1 45%;
+        margin-bottom: 20px;
+    }
+
+    .email_form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .email_form input {
+        width: 60%;
+    }
+
+    .email_form button {
+        width: 35%;
+    }
+}
+
+/* ======== RESPONSIVE ======== */
+
+/*-------------------------*/
+/* شاشات الموبايل الصغيرة (أقل من 480px) */
+/*-------------------------*/
+@media screen and (max-width: 480px) {
+
+    /* الهيدر */
+    .header .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 10px 0;
+    }
+
+    .header ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* الفورم البحث */
+    .searsh-form form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* المنتجات */
+    .products-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90%;
+    }
+
+    /* shop_form */
+    .shop_form {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 30px;
+    }
+
+    /* الفوتر */
+    .footer {
+        text-align: center;
+    }
+
+    .footer_col {
+        flex: 1 1 100%;
+        margin-bottom: 30px;
+    }
+
+    .email_form {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .email_form input {
+        width: 90%;
+        border-right: 1px solid #ddd;
+    }
+
+    .email_form button {
+        width: 90%;
+    }
+}
+
+
+/*-------------------------*/
+/* شاشات التابلت (من 481px إلى 768px) */
+/*-------------------------*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    /* الهيدر */
+    .header .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 15px 0;
+    }
+
+    .header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* المنتجات */
+    .products-container {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .product-card {
+        width: 45%;
+    }
+
+    /* shop_form */
+    .shop_form {
+        height: 350px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 40px;
+    }
+
+    /* الفوتر */
+    .footer_col {
+        flex: 1 1 45%;
+        margin-bottom: 20px;
+    }
+
+    .email_form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .email_form input {
+        width: 60%;
+    }
+
+    .email_form button {
+        width: 35%;
+    }
+}
+@media screen and (max-width: 480px){
+    /* الهيدر */
+    .header .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 10px 0;
+    }
+.header ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+     /* فورم البحث */
+    .searsh-form form {
+        flex-direction: column;
+        gap: 10px;
+    }
+/* المنتجات */
+    .products-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .product-card {
+        width: 90%;
+    }
+
+    /* shop_form */
+    .shop_form {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 30px;
+    }
+      /* الفوتر */
+    .footer {
+        text-align: center;
+    }
+
+    .footer_col {
+        flex: 1 1 100%;
+        margin-bottom: 30px;
+    }
+ .email_form {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .email_form input {
+        width: 90%;
+        border-right: 1px solid #ddd;
+    }
+
+    .email_form button {
+        width: 90%;
+    }
+    
+}
