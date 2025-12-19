@@ -40,14 +40,30 @@ a {
     text-decoration: none;
 }
 
+.searsh-form form {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.searsh-form input {
+    flex: 1;          /* يتمدد حسب المساحة */
+    min-width: 120px; /* أقل حد */
+}
+
+.searsh-form button {
+    flex-shrink: 0;   /* الزر ما ينضغط */
+}
+
+
 /*____________ SHOP FORM IMAGE ___________*/
 .shop_form {
     background-image: url('Group 162.jpg');
-    background-position: bottom center;
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     height: 462px;
-    text-align: center;
+    margin-bottom: 40px;
 }
 
 /*_____________ FOOTER ______________*/
@@ -56,13 +72,11 @@ a {
     padding: 60px 0;
     color: #3d3d3d;
     font-family: sans-serif;
-     margin-top: 50px;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     flex-wrap: wrap;
     gap: 40px;
 }
@@ -94,13 +108,12 @@ a {
 .email_form {
     display: flex;
     margin: 20px 0;
+    gap: 5px;
 }
 
 .email_form input {
     padding: 10px 15px;
     border: 1px solid #ddd;
-    border-right: none;
-    width: 70%;
 }
 
 .email_form button {
@@ -129,6 +142,10 @@ a {
 }
 
 /* ____________  start Products ____________ */
+.featured-products {
+    margin-top: 140px;
+}
+
 .featured-products h2 {
     text-align: center;
     font-size: 32px;
@@ -138,13 +155,14 @@ a {
 
 .products-container {
     display: flex;
-    gap: 25px;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 0 20px;
 }
 
 .product-card {
-    width: 220px;
+    flex: 0 1 calc(25% - 25px);
     background: #fff;
     border-radius: 15px;
     padding: 20px;
@@ -183,103 +201,48 @@ a {
 .product-info {
     display: flex;
     flex-direction: column;
-    text-align: center;
     gap: 5px;
     margin-top: 15px;
-    color: #333;
     font-size: 14px;
 }
 /* ____________ end Products ____________ */
-  
+
 
 /*______________resposive__________*/
 @media screen and (max-width: 480px) {
+
     .header .container {
         flex-direction: column;
-        width: 90%;
         padding: 10px 0;
     }
 
-    /* أيقونة القائمة */
     .menu-icon {
         display: block;
-        font-size: 30px;
-        cursor: pointer;
         margin-bottom: 10px;
     }
 
-    #menu-toggle {
-        display: none; /* نخفي checkbox */
-    }
-
     .list {
-        display: none; /* نخفي القائمة */
+        display: none;
     }
 
     #menu-toggle:checked ~ .list {
-        display: block; /* تظهر عند الضغط */
+        display: block;
     }
 
     .list ul {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
-    }
-
-    /* فورم البحث */
-    .searsh-form form {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* المنتجات */
-    .products-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         gap: 15px;
+    }
+
+    .searsh-form form {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
     }
 
     .product-card {
-        width: 45%;       /* عرض المنتج نصف تقريبا */
-        margin-bottom: 15px;
-        padding: 15px;
-    }
-
-    /* لو الشاشة صغيرة جدًا، منتج واحد في الصف */
-    @media screen and (max-width: 360px) {
-        .product-card {
-            width: 100%;
-        }
-    }
-
-    /* shop_form */
-    .shop_form {
-        height: 300px;
-        background-size: cover;
-        background-position: center;
-        margin-bottom: 30px;
-    }
-
-    /* الفوتر */
-    .footer {
-        text-align: center;
-    }
-
-    .footer_col {
-        flex: 1 1 100%;
-        margin-bottom: 30px;
-    }
-
-    .email_form {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .email_form input,
-    .email_form button {
-        width: 90%;
+        flex: 0 1 100%;
     }
 }
 
@@ -288,100 +251,30 @@ a {
 /*-------------------------*/
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
-    /* الهيدر */
     .header .container {
         flex-direction: column;
-        width: 90%;
-        padding: 15px 0;
+        gap: 10px;
     }
 
-    .list {
-        display: block; /* القائمة ظاهرة */
-    }
-
-    /* فورم البحث */
     .searsh-form form {
-        flex-direction: row;
-        gap: 10px;
-    }
-
-    /* المنتجات */
-    .products-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .product-card {
-        width: 45%;   /* منتجين في الصف */
-        margin-bottom: 20px;
-        padding: 20px;
-    }
-
-    /* shop_form */
-    .shop_form {
-        height: 350px;
-        background-size: cover;
-        background-position: center;
-        margin-bottom: 40px;
-    }
-
-    /* الفوتر */
-    .footer_col {
-        flex: 1 1 45%;
-        margin-bottom: 20px;
-    }
-
-    .email_form {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .email_form input {
-        width: 60%;
-    }
-
-    .email_form button {
-        width: 35%;
-    }
-}
-/* شاشات كبيرة (أكبر من 768px) */
-@media screen and (min-width: 769px){
-    /* الهيدر */
-    .header .container {
-        flex-direction: row;
-        width: 90%;
-        padding: 15px 40px;
-    }
-
-    .list {
-        display: block;
-    }
-
-    .products-container {
         display: flex;
         flex-wrap: nowrap;
-        justify-content: center;
-        gap: 25px;
+        gap: 8px;
     }
 
     .product-card {
-        width: 220px;  /* الحجم الأساسي للمنتجات */
-        padding: 20px;
-        margin-bottom: 0;
+        flex: 0 1 calc(50% - 25px);
     }
 
-    .shop_form {
-        height: 462px;
+    .footer_col {
+        flex: 1 1 45%;
     }
+}
 
-    .email_form input {
-        width: auto;
-    }
+/* شاشات كبيرة (أكبر من 768px) */
+@media screen and (min-width: 769px){
 
-    .email_form button {
-        width: auto;
+    .product-card {
+        flex: 0 1 calc(25% - 25px);
     }
 }
