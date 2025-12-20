@@ -207,8 +207,11 @@ a {
 }
 /* ____________ end Products ____________ */
 
+/*______________ Responsive __________*/
 
-/*______________resposive__________*/
+/*-------------------------*/
+/* شاشات الجوال (حتى 480px) */
+/*-------------------------*/
 @media screen and (max-width: 480px) {
 
     .header .container {
@@ -239,10 +242,24 @@ a {
         display: flex;
         flex-wrap: nowrap;
         gap: 8px;
+        width: 90%;
+        justify-content: center;
+    }
+
+    /* تعديل المنتجات: نعرض 2 جنب بعض بدل 1 */
+    .products-container {
+        justify-content: center;
+        gap: 15px;
     }
 
     .product-card {
-        flex: 0 1 100%;
+        flex: 0 1 calc(50% - 15px); /* كل صف يحتوي على 2 منتجات */
+    }
+
+    /* الفوتر: نخلي الأعمدة تتراصف عمودياً */
+    .footer .row {
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -251,30 +268,64 @@ a {
 /*-------------------------*/
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
-    .header .container {
-        flex-direction: column;
-        gap: 10px;
+    .searsh-form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .searsh-form form {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 8px;
+        width: 60%;  
+    }
+
+    /* تعديل المنتجات: 2-3 منتجات جنب بعض حسب المساحة */
+    .products-container {
+        justify-content: center;
+        gap: 20px;
     }
 
     .product-card {
-        flex: 0 1 calc(50% - 25px);
+        flex: 0 1 calc(33.33% - 20px); /* 3 منتجات في الصف إذا المساحة تسمح */
     }
 
-    .footer_col {
-        flex: 1 1 45%;
+    /* الفوتر: أعمدة بجانب بعض */
+    .footer .row {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .menu-icon {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* إخفاء القائمة الأساسية */
+    .list {
+        display: none;
+    }
+
+    /* عند الضغط على الأيقونة تظهر القائمة */
+    #menu-toggle:checked ~ .list {
+        display: block;
+    }
+
+    .list ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
     }
 }
 
 /* شاشات كبيرة (أكبر من 768px) */
+
 @media screen and (min-width: 769px){
 
     .product-card {
-        flex: 0 1 calc(25% - 25px);
+        flex: 0 1 calc(25% - 25px); /* 4 منتجات في الصف */
+    }
+
+    /* الفوتر: أعمدة بجانب بعض */
+    .footer .row {
+        flex-wrap: nowrap;
+        gap: 40px;
     }
 }
