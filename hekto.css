@@ -2,17 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+
 }
 
 /*____________ HEADER____________ */
 .header {
     display: flex;
-    background-color: rgb(226, 226, 233);
+    background-color: rgb(250, 248, 249) !important;
     justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 1177px;
+    height: 40px;
     z-index: 999;
 }
 
@@ -32,7 +35,7 @@
 }
 
 .header a:hover {
-    background-color: rgb(132, 132, 136);
+    background-color: rgb(163, 163, 207);
     transform: scale(1.05);
 }
 
@@ -55,6 +58,16 @@ a {
     flex-shrink: 0;   /* الزر ما ينضغط */
 }
 
+/*__________new IMAGE________*/
+.new {
+    background-image: url('img/promotional.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 462px;
+    margin-bottom: 40px;
+}
+/*__________end new IMAGE________*/
 
 /*____________ SHOP FORM IMAGE ___________*/
 .shop_form {
@@ -144,6 +157,7 @@ a {
 /* ____________  start Products ____________ */
 .featured-products {
     margin-top: 140px;
+    
 }
 
 .featured-products h2 {
@@ -415,19 +429,22 @@ a {
     max-width: 250px;
 }
 
-/*===================*/
 /* RESPONSIVE DESIGN */
+/* ============================= */
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*____________ HEADER____________ */
+/* ============================= */
+/* HEADER */
 .header {
     display: flex;
-    background-color: rgb(226, 226, 233);
     justify-content: space-between;
+    align-items: center;
+    background-color: rgb(226, 226, 233);
     position: fixed;
     top: 0;
     left: 0;
@@ -450,15 +467,16 @@ a {
     list-style-type: none;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .header a:hover {
     background-color: rgb(132, 132, 136);
     transform: scale(1.05);
 }
 
-a {
-    text-decoration: none;
-}
-
+/* SEARCH FORM */
 .searsh-form form {
     display: flex;
     align-items: center;
@@ -474,7 +492,7 @@ a {
     flex-shrink: 0;
 }
 
-/* الأيقونة البديلة لليست */
+/* MENU ICON */
 .menu-icon {
     font-size: 28px;
     cursor: pointer;
@@ -485,7 +503,8 @@ a {
     display: none;
 }
 
-/*_____________ PRODUCTS ____________*/
+
+/* PRODUCTS */
 .featured-products {
     margin-top: 140px;
 }
@@ -550,7 +569,8 @@ a {
     font-size: 14px;
 }
 
-/*_____________ SHOP FORM IMAGE ___________*/
+/* ============================= */
+/* SHOP FORM IMAGE */
 .shop_form {
     background-image: url('Group 162.jpg');
     background-position: center;
@@ -560,7 +580,8 @@ a {
     margin-bottom: 40px;
 }
 
-/*_____________ FOOTER ______________*/
+/* ============================= */
+/* FOOTER */
 .footer {
     background: #c9cad3;
     padding: 60px 0;
@@ -622,78 +643,103 @@ a {
     color: #6a6a6a;
     max-width: 250px;
 }
+/*end FOOTER */
+
 
 /* RESPONSIVE DESIGN */
 
-/* شاشات الجوال (حتى 480px) */
+/* 📱 جوال صغير (حتى 480px) */
 @media screen and (max-width: 480px) {
 
     .header .container {
         flex-direction: column;
-        padding: 10px 0;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 80px;
     }
 
     .menu-icon {
         display: block;
-        margin-bottom: 25px; /* مسافة كافية بين الأيقونة والفورم */
+        font-size: 26px;
     }
 
-    .list { display: none; }
-    #menu-toggle:checked ~ .list { display: block; }
-    .list ul { flex-direction: column; text-align: center; gap: 15px; }
+    .list {
+        display: none;
+        width: 100%;
+        background: #fff;
+    }
+
+    #menu-toggle:checked + .menu-icon + .list {
+        display: block;
+    }
+
+    .list ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
 
     .searsh-form form {
-        display: flex;
         flex-direction: column;
+        width: 100%;
         gap: 10px;
-        width: 90%;
-        justify-content: center;
         align-items: center;
     }
 
     .searsh-form input,
-    .searsh-form button { width: 90%; max-width: 300px; }
-
-    .products-container { justify-content: center; gap: 15px; }
-    .product-card { flex: 0 1 calc(50% - 15px); }
-
-    .footer { padding: 30px 15px; text-align: center; }
-    .footer .row { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .footer_col { flex: 0 1 calc(50% - 20px); max-width: 250px; text-align: center; }
-
-    .email_form { flex-direction: column; gap: 10px; justify-content: center; align-items: center; }
-    .contact_info { margin-top: 15px; max-width: 100%; }
-    .footer_col ul li { display: inline-block; margin: 5px 10px; }
-}
-
-/* شاشات التابلت (481px - 768px) */
-
-@media screen and (min-width: 481px) and (max-width: 768px) {
-
-    /* أظهر أيقونة واحدة فقط */
-    .menu-icon { 
-        display: block; 
-        margin-bottom: 15px; 
+    .searsh-form button {
+        width: 90%;
+        max-width: 300px;
+    }
+   
+    .featured-products {
+        padding-top: 200px;
     }
 
-    /* أخفي روابط القائمة بشكل افتراضي */
-    .list { 
-        display: none; 
-    }
 
-    /* عند الضغط على الأيقونة تظهر كل الروابط مرة واحدة */
-    #menu-toggle:checked ~ .list { 
-        display: block; 
-    }
 
-    /* تنسيق القائمة */
-    .list ul {
-        flex-direction: column; 
-        text-align: center; 
+    .products-container {
         gap: 15px;
     }
 
-   
+    .product-card {
+        flex: 0 1 calc(50% - 10px); /* كرتين جنب بعض */
+    }
+
+    .footer .row {
+        justify-content: center;
+    }
+
+    .footer_col {
+        flex: 0 1 calc(50% - 20px);
+        text-align: center;
+    }
+}
+
+/* 📱 تابلت (481px – 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    .menu-icon {
+        display: block;
+    }
+
+    .list {
+        display: none;
+    }
+
+    #menu-toggle:checked + .menu-icon + .list {
+        display: block;
+    }
+
+    .list ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
     .searsh-form {
         width: 100%;
         display: flex;
@@ -702,24 +748,58 @@ a {
 
     .searsh-form form {
         width: 60%;
-        display: flex;
-        gap: 20px; 
-        align-items: center;
+        gap: 15px;
     }
 
-    .searsh-form input { flex: 1; min-width: 0; }
-    .searsh-form button { flex-shrink: 0; }
+    .searsh-form input {
+        flex: 1;
+        min-width: 0;
+    }
 
-    .products-container { justify-content: center; gap: 20px; }
-    .product-card { flex: 0 1 calc(33.33% - 20px); }
+    .products-container {
+        gap: 20px;
+    }
 
-    .footer { padding: 40px 20px; }
-    .footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
-    .footer_col { flex: 0 1 calc(50% - 20px); max-width: calc(50% - 20px); }
+    .product-card {
+        flex: 0 1 calc(50% - 20px); /* كرتين جنب بعض */
+    }
+
+    .footer .row {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footer_col {
+        flex: 0 1 calc(50% - 20px);
+    }
 }
 
-/* شاشات كبيرة (أكبر من 768px) */
+/* 💻 لابتوب (769px – 1200px) */
 @media screen and (min-width: 769px) {
-    .product-card { flex: 0 1 calc(25% - 25px); }
-    .footer .row { flex-wrap: nowrap; gap: 40px; }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .list {
+        display: block;
+    }
+
+    .product-card {
+        flex: 0 1 calc(25% - 25px); /* 4 كروت بالصف */
+    }
+
+    .footer .row {
+        flex-wrap: nowrap;
+        gap: 40px;
+    }
+}
+
+/* 🖥️ شاشات كبيرة (أكبر من 1200px) */
+@media screen and (min-width: 1200px) {
+    .container,
+    .products-container {
+        max-width: 1200px;
+        margin: auto;
+    }
 }
