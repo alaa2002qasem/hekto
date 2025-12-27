@@ -70,15 +70,12 @@ a {
 
 /*____________hero-section ___________*/
 .hero-section {
+background-color: #F2F0FF;
     display: flex;
-    /* لتوزيع المساحة بالتساوي بين القسمين */
     justify-content: space-between;
     align-items: center;
-    /* لون الخلفية الفاتح الموجود في الصورة */
-    background-color: #f7f3ff; 
-    padding: 50px 5%; /* مسافة داخلية جيدة */
-   
-    padding-top: 80px;
+    padding: 60px 10%;
+    margin-top: 80px;
 }
 
 .subtitle {
@@ -182,7 +179,7 @@ a {
     font-size: 14px;
 }
 /*_____________latest-products______________*/
-/*_____________latest-products______________*/
+
 .lest-featured-products {
     margin-top: 0;
     text-align: center;
@@ -651,7 +648,7 @@ a {
     }
 }
 
-/* 📱 تابلت (481px – 768px) */
+
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
     .menu-icon {
@@ -706,7 +703,7 @@ a {
     }
 }
 
-/* 💻 لابتوب (769px – 1200px) */
+
 @media screen and (min-width: 769px) {
 
     .menu-icon {
@@ -718,7 +715,7 @@ a {
     }
 
     .product-card {
-        flex: 0 1 calc(25% - 25px); /* 4 كروت بالصف */
+        flex: 0 1 calc(25% - 25px); 
     }
 
     .footer .row {
@@ -727,7 +724,7 @@ a {
     }
 }
 
-/* 🖥️ شاشات كبيرة (أكبر من 1200px) */
+/* شاشات كبيرة (أكبر من 1200px) */
 @media screen and (min-width: 1200px) {
     .container,
     .products-container {
@@ -736,16 +733,16 @@ a {
     }
 }
 
-/*ريسبونسيف الهيرو سيكشن*/
+/*____________hero-section ___________*/
 @media (max-width: 768px) {
     .hero-section {
         display: flex;
         flex-direction: column;
         padding: 20px 5%;
-        margin-top: 80px; /* ينزل الهيرو تحت الهيدر */
+        margin-top: 80px; 
     }
 
-    /* الصورة */
+    
     .hero-right {
         order: 1;
         width: 100%;
@@ -759,12 +756,74 @@ a {
         height: auto;
     }
 
-    /* النص */
+   
     .hero-left {
         order: 2;
         width: 100%;
         text-align: center;
     }
 }
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 100px 5%;
+    }
+}
 
+/*_____________RESPONSIVE latest-products______________*/
 
+@media (max-width: 768px) {
+    .lest-products-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+    }
+
+    .lest-product-card {
+        height: auto;
+    }
+
+    .product-img img {
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lest-products-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .product-img img {
+        max-height: 120px;
+    }
+}
+@media (max-width: 480px) {
+    .lest-featured-products h2 {
+        font-size: 20px;
+    }
+
+    .lest-products-container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .product-img img {
+        max-height: 120px;
+    }
+
+    .product-title {
+        font-size: 14px;
+        max-width: 60%;
+    }
+
+    .price {
+        font-size: 13px;
+        max-width: 35%;
+    }
+ @media (max-width: 768px) {
+    .product-sale img {
+        width: 60px;
+        justify-self: center;
+    align-self: center;
+  }
+}
+    }
