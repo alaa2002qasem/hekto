@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 /*____________ HEADER____________ */
@@ -83,7 +84,7 @@ background-color: #F2F0FF;
 }
 
 .hero-left, .hero-right {
-    /* كل قسم يأخذ نصف العرض تقريباً */
+   
     flex-basis: 48%; 
     
 }
@@ -96,7 +97,7 @@ background-color: #F2F0FF;
 }
 .shop-now-btn {
     display: inline-block;
-    background-color: #ff4d94; /* اللون الوردي الزاهي */
+    background-color: #ff4d94; 
     color: white;
     padding: 15px 30px;
     text-decoration: none;
@@ -105,7 +106,7 @@ background-color: #F2F0FF;
 }
 
 
-/* التأكد من أن الصورة لا تخرج من حدود القسم الأيمن */
+
 .hero-right img {
     max-width: 100%;
     height: auto;
@@ -191,7 +192,8 @@ background-color: #F2F0FF;
 .lest-featured-products h2 {
     font-size: 28px;
     color: #1c1360;
-    margin-bottom: 20px;
+    margin: 10px;
+    padding: 30px;
 }
 
 .lest-products-container {
@@ -214,7 +216,11 @@ background-color: #F2F0FF;
     align-items: center;
     position: relative;
     transition: transform 0.3s;
+
+    width: 100%;
+    box-sizing: border-box;
 }
+
 
 .lest-product-card:hover {
     transform: translateY(-5px);
@@ -231,7 +237,7 @@ background-color: #F2F0FF;
 
 .product-img img {
     max-width: 100%;
-    max-height: 200px; /* ارتفاع مناسب */
+    max-height: 200px; 
     object-fit: contain;
     border-radius: 10px;
 }
@@ -281,8 +287,43 @@ background-color: #F2F0FF;
     font-weight: normal;
     margin-left: 5px;
 }
-
 /*_____________end latest-products______________*/
+
+/*_____________What Shopex Offer______________*/
+.offer-section {
+    text-align: center;
+   
+    padding: 60px 20px;
+    
+}
+.Offer-card {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.Offer-card h3 {
+  font-size: 16px;                     
+  color: #1A0B5B4D;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.Offer-card h2 {
+  font-size: 22px;
+  color: #1c1360;
+  margin: 15px 0 10px;
+   margin-bottom:30px ;
+}
+
+.offer-section > h2 {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  display: inline-block;
+  font-size: 42px;   
+ color: #151875;  
+}
+
+/*_____________end What Shopex Offer______________*/
+
 
 /*_____________ SHOP FORM IMAGE ___________*/
 .shop_form {
@@ -358,6 +399,49 @@ background-color: #F2F0FF;
 }
 
 /* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    /* قيود عامة لكل المحتوى */
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .page-container {
+        max-width: 100%;   /* لا يتجاوز عرض الشاشة */
+        padding: 0 12px;   /* مسافة عن الأطراف */
+        margin: 0 auto;    /* توسيط المحتوى */
+        box-sizing: border-box;
+    }
+
+    /* الكروت والصور */
+    .lest-products-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        width: 100%;
+    }
+
+    .lest-product-card {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .product-sale img {
+        width: 50px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .lest-featured-products h2 {
+        text-align: center;
+        font-size: 22px;
+        padding: 10px 0;
+    }
+}
+
+
 /* ============================= */
 /* Reset Styles */
 * {
@@ -736,10 +820,12 @@ background-color: #F2F0FF;
 /*____________hero-section ___________*/
 @media (max-width: 768px) {
     .hero-section {
-        display: flex;
-        flex-direction: column;
-        padding: 20px 5%;
-        margin-top: 80px; 
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 15px 5%;
+        margin-top: 10px 40px;
+         display: block;
+       
     }
 
     
@@ -751,9 +837,9 @@ background-color: #F2F0FF;
     }
 
     .hero-right img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
+      max-width: 100%;
+        
+       
     }
 
    
@@ -772,58 +858,55 @@ background-color: #F2F0FF;
 /*_____________RESPONSIVE latest-products______________*/
 
 @media (max-width: 768px) {
+   
     .lest-products-container {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 20px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 12px;
+        
     }
-
     .lest-product-card {
-        height: auto;
-    }
-
-    .product-img img {
-        max-height: 150px;
-    }
+    width: 100%;
 }
 
-@media (max-width: 480px) {
-    .lest-products-container {
+    }
+  .lest-product-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+}
+
+ .lest-product-info {
+        display: grid;
         grid-template-columns: 1fr;
-        padding: 10px;
+        justify-items: center;
+        row-gap: 4px;
+        width: 100%;
     }
-
-    .product-img img {
-        max-height: 120px;
-    }
-}
-@media (max-width: 480px) {
     .lest-featured-products h2 {
-        font-size: 20px;
+        padding: 10px 0;
+        font-size: 22px;
+        text-align: center;
     }
 
-    .lest-products-container {
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .product-img img {
-        max-height: 120px;
-    }
-
-    .product-title {
-        font-size: 14px;
-        max-width: 60%;
-    }
-
-    .price {
-        font-size: 13px;
-        max-width: 35%;
-    }
- @media (max-width: 768px) {
     .product-sale img {
         width: 60px;
-        justify-self: center;
-    align-self: center;
+        margin: auto;
+        display: block;
+    }
+
+
+    
+/*_____________ What Shopex Offer______________*/
+
+@media (max-width: 768px) {
+ .Offer-card {
+    width: calc(50% - 15px);
   }
 }
-    }
+@media (max-width: 480px) {
+  .Offer-card {
+    width: calc(50% - 15px);
+  }
+}
+/*_____________end What Shopex Offer______________*/
