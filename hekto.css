@@ -390,11 +390,25 @@ background-color: #F2F0FF;
 .shop_form {
     background-image: url('Group 162.jpg');
     background-position: center;
-    background-size: cover;
+  background-size: contain;
     background-repeat: no-repeat;
     height: 462px;
     margin-bottom: 40px;
 }
+@media (max-width: 768px){
+    .shop_form {
+      
+       height: 180px; 
+       background-size: 100% auto;
+
+    }
+}
+@media (max-width: 1024px) {
+    .shop_form {
+        height: 350px;              
+    }
+}
+
 
 /*_____________ FOOTER ______________*/
 .footer {
@@ -645,17 +659,8 @@ background-color: #F2F0FF;
 
 
 /* _____________________________ */
-/* SHOP FORM IMAGE */
-.shop_form {
-    background-image: url('Group 162.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 462px;
-    margin-bottom: 40px;
-}
 
-/* ============================= */
+
 /* FOOTER */
 .footer {
     background: #c9cad3;
@@ -975,29 +980,33 @@ background-color: #F2F0FF;
 /*___________  RESPONSIVE Categories ___________*/
 @media (max-width: 1024px) {
   .category-container {
-    gap: 30px;          /* بس نخفف المسافة */
+    gap: 30px;         
   }
 
   .category-card img {
     width: 160px;
     height: 160px;
-    padding: 26px;
+    padding:26px 10px;
   }
 }
 @media (max-width: 768px) {
+    .section-title {
+    font-size: 35px;
+    }
   .category-container {
     justify-content: flex-start;
-    gap: 20px;
     overflow-x: auto;
-    padding-bottom: 20px;
+    padding: 20px 10px;
   }
 
   .category-card {
-    flex: 0 0 auto;   /* مهم جدًا */
+    gap: 15px;
+    flex: 0 0 auto;  
+    width: 140px;  
   }
 
   .category-container::-webkit-scrollbar {
-    display: none;    /* نخفي السكرول */
+    display: none;    /* يخفي السكرول */
   }
 }
 
