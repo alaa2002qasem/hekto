@@ -324,6 +324,67 @@ background-color: #F2F0FF;
 
 /*_____________end What Shopex Offer______________*/
 
+/*___________latest-products_________*/
+
+/*___________ end latest-products_________*/
+/*___________ Categories ___________*/
+.section-title{
+    text-align: center;
+    font-size: 42px;
+    color: #1c1360;
+    margin-bottom: 40px;
+}
+.category-container {
+  display: flex;              
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  position: relative;         
+}
+
+
+.category-card {
+  text-align: center;
+}
+
+.category-card img {
+  width: 178px;
+  height: 178px;
+  top: 46px;
+  left: 41px;
+  border-radius: 50%;
+  background: #f6f6f6;
+  padding: 30px;
+   margin-bottom: 35px;
+  transition: 0.4s ease;
+  box-shadow: none;           
+}
+
+/* الهلال */
+.category-card:hover img {
+  box-shadow: -14px 10px 0 0 #7a5af8;
+}
+.img-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.view-btn {
+  position: absolute;
+  bottom: -2px;   
+  background: #2ecc71;
+  border: none;
+  color: #fff;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+
+/*___________ end Categories ___________*/
 
 /*_____________ SHOP FORM IMAGE ___________*/
 .shop_form {
@@ -582,7 +643,8 @@ background-color: #F2F0FF;
     font-size: 14px;
 }
 
-/* ============================= */
+
+/* _____________________________ */
 /* SHOP FORM IMAGE */
 .shop_form {
     background-image: url('Group 162.jpg');
@@ -910,3 +972,33 @@ background-color: #F2F0FF;
   }
 }
 /*_____________end What Shopex Offer______________*/
+/*___________  RESPONSIVE Categories ___________*/
+@media (max-width: 1024px) {
+  .category-container {
+    gap: 30px;          /* بس نخفف المسافة */
+  }
+
+  .category-card img {
+    width: 160px;
+    height: 160px;
+    padding: 26px;
+  }
+}
+@media (max-width: 768px) {
+  .category-container {
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+
+  .category-card {
+    flex: 0 0 auto;   /* مهم جدًا */
+  }
+
+  .category-container::-webkit-scrollbar {
+    display: none;    /* نخفي السكرول */
+  }
+}
+
+/*___________end  RESPONSIVE Categories ___________*/
