@@ -324,9 +324,46 @@ background-color: #F2F0FF;
 
 /*_____________end What Shopex Offer______________*/
 
-/*___________latest-products_________*/
+/* Trending Products*/
+.trending-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 0 20px;
+   box-shadow: 0 0 0 rgba(0,0,0,0);
+}
 
-/*___________ end latest-products_________*/
+.trending-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.trending-img {
+    background-color: #F5F6F8 ;
+  max-width: 70%;
+  height: auto;
+}
+
+.price-info {
+  margin-top: 10px;
+}
+
+.price-new {
+  color: #151875;
+  font-weight: bold;
+}
+
+.old-price {
+  margin-left: 8px;
+  color: #fb2e86;
+  text-decoration: line-through;
+}
+
+/*end Trending Products*/
+
 /*___________ Categories ___________*/
 .section-title{
     text-align: center;
@@ -736,6 +773,7 @@ background-color: #F2F0FF;
         gap: 10px;
         padding: 10px;
     }
+    
 
     .logo img {
         width: 80px;
@@ -776,7 +814,7 @@ background-color: #F2F0FF;
     }
    
     .featured-products {
-        padding-top: 200px;
+        padding-top: 10px;
     }
 
 
@@ -873,6 +911,7 @@ background-color: #F2F0FF;
         flex-wrap: nowrap;
         gap: 40px;
     }
+    
 }
 
 /* شاشات كبيرة (أكبر من 1200px) */
@@ -885,42 +924,42 @@ background-color: #F2F0FF;
 }
 
 /*____________hero-section ___________*/
+
 @media (max-width: 768px) {
     .hero-section {
-        display: grid;
-        grid-template-columns: 1fr;
-        padding: 15px 5%;
-        margin-top: 10px 40px;
-         display: block;
-       
+        flex-direction: column;
+        padding: 20px 5%;
+        margin-top: 90px; 
     }
 
-    
     .hero-right {
         order: 1;
-        width: 100%;
         display: flex;
         justify-content: center;
+        width: 100%;
     }
 
     .hero-right img {
-      max-width: 100%;
-        
-       
+        max-width: 80%;
+        height: auto;
+        padding: 50px 0;
     }
 
-   
     .hero-left {
         order: 2;
         width: 100%;
         text-align: center;
     }
 }
+
 @media (max-width: 480px) {
     .hero-section {
-        padding: 100px 5%;
+        padding: 20px 15px;
+        margin-top: 90px; 
     }
 }
+
+
 
 /*_____________RESPONSIVE latest-products______________*/
 
@@ -929,17 +968,15 @@ background-color: #F2F0FF;
     .lest-products-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
-        padding: 12px;
+        padding: 9px;
         
     }
-    .lest-product-card {
-    width: 100%;
-}
+ 
 
     }
   .lest-product-card {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     row-gap: 10px;
 }
 
@@ -1011,3 +1048,32 @@ background-color: #F2F0FF;
 }
 
 /*___________end  RESPONSIVE Categories ___________*/
+/* Responsive Trending Products */
+@media (max-width: 768px) {
+  .trending-container {
+    grid-template-columns: repeat(2, 1fr); /* عنصرين بالسطر */
+    gap: 10px; /* تقليل المسافة */
+    padding: 0 10px;
+  }
+
+  .trending-card {
+    padding: 15px;
+  }
+
+  .trending-img {
+    max-width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  .trending-container {
+    gap: 8px;
+  }
+
+  .trending-card {
+    padding: 12px;
+  }
+
+  .product-title {
+    font-size: 14px;
+  }
+}
